@@ -17,6 +17,13 @@ public class BirdScript : MonoBehaviour
     void Update()
     {
         flop(isAlive);
+
+        if (transform.position.y > 5.5 || transform.position.y < -5.5)
+        {
+            logic.gameOver();
+            isAlive = false;
+            logic.active = false;
+        }
     }
 
     void flop(bool alive)

@@ -11,10 +11,6 @@ public class Logic : MonoBehaviour
     public GameObject gameOverScreen;
     public bool active = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void setNonActive(bool active)
-    {
-        active = false;
-    }
     public void addScore(bool active = true)
     {
         if(active)
@@ -26,7 +22,7 @@ public class Logic : MonoBehaviour
 
     public void playAgain()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("StartGameScene");
     }
     public void gameOver()
     {
