@@ -3,7 +3,7 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public int flopStrenght = 6;
+    public int flopStrenght = 5;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +20,7 @@ public class BirdScript : MonoBehaviour
     {
         if(Input.GetKeyDown("space"))
         {
-            rb.linearVelocity = Vector2.up * (flopStrenght * Time.deltaTime);
+            rb.linearVelocity = Vector2.up * flopStrenght;
         }
     }
 }
