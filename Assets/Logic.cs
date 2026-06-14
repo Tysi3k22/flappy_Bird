@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using Unity.VectorGraphics;
-using Mono.Cecil.Cil;
+
 
 public class Logic : MonoBehaviour
 {
