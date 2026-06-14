@@ -4,12 +4,13 @@ using UnityEngine.UIElements;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public int flopStrenght = 5;
+    public int flopStrenght = 3;
     private bool isAlive = true;
+    private Logic logic;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("logic").GetComponent<Logic>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,8 @@ public class BirdScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        logic.gameOver();
         isAlive = false;
+        logic.active = false;
     }
 }
