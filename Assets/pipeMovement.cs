@@ -15,7 +15,7 @@ public class pipeMovement : MonoBehaviour
     {
         transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
 
-        if (transform.position.x < -15)
+        if (transform.position.x < -8)
         {
             Destroy(gameObject);
         }
