@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int flopStrenght = 5;
+    private bool isAlive = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,14 +15,22 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        flop();
+        flop(isAlive);
     }
 
-    void flop()
+    void flop(bool alive)
     {
-        if(Input.GetKeyDown("space"))
+        if(alive)
         {
-            rb.linearVelocity = Vector2.up * flopStrenght;
+            if(Input.GetKeyDown("space"))
+            {
+                rb.linearVelocity = Vector2.up * flopStrenght;
+            }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isAlive = false;
     }
 }
