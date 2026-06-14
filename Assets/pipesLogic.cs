@@ -15,10 +15,7 @@ public class pipesLogic : MonoBehaviour
     void Update()
     {
         createPipe();
-        if (transform.position.x < -15)
-        {
-            Destroy(gameObject);
-        }
+        
 
     }
 
